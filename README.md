@@ -49,7 +49,7 @@ python3 ksm.py
 ```
 9. If all seems okay, then edit your crontab with `crontab -e`:
 ```
-# nym
+# ksm-gov
 0 */6 * * * cd /root/status-ksm-gov/ && /usr/bin/python3 ksm.py
 ```
 > check your logs in several hours here: `~/status-ksm-gov/log/ksm.log`
