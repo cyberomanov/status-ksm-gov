@@ -21,6 +21,11 @@ class ReferendaItem(BaseModel):
     latest_block_timestamp: int
 
 
+class ReferendaV1Item(BaseModel):
+    referendum_index: int
+    status: str
+
+
 class ReferendaAddress(BaseModel):
     address: str
 
@@ -34,9 +39,19 @@ class ReferendaVoter(BaseModel):
     voting_time: int
 
 
+class ReferendaV1Voter(BaseModel):
+    account: ReferendaAddress
+    amount: int
+    passed: str
+    extrinsic_hash: str
+    extrinsic_index: str
+    conviction: str
+    voting_time: int
+
+
 class ReferendaData(BaseModel):
     count: int | None
-    list: list[ReferendaItem] | list[ReferendaVoter] | None
+    list: list[ReferendaItem] | list[ReferendaVoter] | list[ReferendaV1Item] | list[ReferendaV1Voter] | None
     account: ReferendaAccount | None
 
 
